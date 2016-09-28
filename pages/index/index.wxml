@@ -1,0 +1,16 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="section">
+    <form bindsubmit="addItemSubmit">
+    <input placeholder="请输入。。。" name="name-input" class="input-box" />
+    <button type="default" formType="submit" class="add-btn" size="mini"> + </button>
+    </form>
+  </view>
+  <view class="section">
+    <block wx:for-items="{{items}}" wx:for-item="item">
+    	<view class="item">
+    		<icon type="{{item['is_complete'] ? 'success_circle' : 'circle'}}" data-itemindex="{{index}}" size="20" bindtap="changeItem" /> <text style="{{item['is_complete'] ? 'color:#ccc' : ''}}">{{item['name-input']}}</text>
+    	</view>
+	  </block>
+	</view>
+</view>
